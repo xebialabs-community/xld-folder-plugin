@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!--
+
+    THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS
+    FOR A PARTICULAR PURPOSE. THIS CODE AND INFORMATION ARE NOT SUPPORTED BY XEBIALABS.
+
+-->
+<rules xmlns="http://www.xebialabs.com/xl-deploy/xl-rules">
+    <rule name="xld.CopiedFolder.CREATE" scope="deployed">
+        <conditions>
+            <type>xld.CopiedFolder</type>
+            <operation>CREATE</operation>
+            <operation>MODIFY</operation>
+            <expression>deployed.container.os != "WINDOWS"</expression>
+        </conditions>
+        <steps>
+            <os-script>
+                <order>70</order>
+                <script>xld.Folder/unpack_create</script>
+            </os-script>
+        </steps>
+    </rule>
+    
+    <rule name="xld.CopiedFolder.DELETE" scope="deployed">
+        <conditions>
+            <type>xld.CopiedFolder</type>
+            <operation>DESTROY</operation>
+            <operation>MODIFY</operation>
+            <expression>previousDeployed.container.os != "WINDOWS"</expression>
+        </conditions>
+        <steps>
+            <os-script>
+                <order>30</order>
+                <script>xld.Folder/unpack_destroy</script>
+            </os-script>
+        </steps>
+    </rule>
+
+    <!-- WINDOWS -->
+    <rule name="xld.CopiedFolder.CREATE_WINDOWS" scope="deployed">
+        <conditions>
+            <type>xld.CopiedFolder</type>
+            <operation>CREATE</operation>
+            <operation>MODIFY</operation>
+            <expression>deployed.container.os == "WINDOWS"</expression>
+        </conditions>
+        <steps>
+            <powershell>
+                <order>70</order>
+                <script>xld.Folder/unpack_create.ps1</script>
+            </powershell>
+        </steps>
+    </rule>
+    
+    <rule name="xld.CopiedFolder.DELETE_WINDOWS" scope="deployed">
+        <conditions>
+            <type>xld.CopiedFolder</type>
+            <operation>DESTROY</operation>
+            <operation>MODIFY</operation>
+            <expression>previousDeployed.container.os == "WINDOWS"</expression>
+        </conditions>
+        <steps>
+            <powershell>
+                <order>30</order>
+                <script>xld.Folder/unpack_destroy.ps1</script>
+            </powershell>
+        </steps>
+    </rule>
+
+
+</rules>

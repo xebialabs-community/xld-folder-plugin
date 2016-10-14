@@ -1,0 +1,18 @@
+<!--
+
+    THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS
+    FOR A PARTICULAR PURPOSE. THIS CODE AND INFORMATION ARE NOT SUPPORTED BY XEBIALABS.
+
+-->
+<synthetic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns="http://www.xebialabs.com/deployit/synthetic"
+           xsi:schemaLocation="http://www.xebialabs.com/deployit/synthetic synthetic.xsd">
+
+    <type type="xld.CopiedFolder" extends="udm.BaseDeployedArtifact" deployable-type="xld.Folder" container-type="overthere.Host">
+        <generate-deployable type="xld.Folder" extends="udm.BaseDeployableArchiveArtifact" />
+        <property name="targetPath" description="Path to which artifact must be copied to when being deployed."/>
+        <property name="targetPathShared" kind="boolean" required="false" description="Is the targetPath shared by others on the host. When true, the targetPath is not deleted during undeployment; only the artifacts copied to it." />
+    </type>
+
+</synthetic>

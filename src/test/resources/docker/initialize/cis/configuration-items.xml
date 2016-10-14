@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xl:export xmlns:xl="http://www.xebialabs.com/xl-export">
+  <xl:metadata>
+    <xl:exported-by>admin</xl:exported-by>
+    <xl:exported-at>2016-10-14T21:41:39.556+0000</xl:exported-at>
+    <xl:exported-format-version>5.5.3</xl:exported-format-version>
+    <xl:encryption-key-fingerprint>f6094d333c0736339884d1fe38d9c54e14019ac9</xl:encryption-key-fingerprint>
+  </xl:metadata>
+  <xl:exported-configuration-items exported-root-id="/">
+    <udm.DeploymentPackage id="Applications/testapp/1.0.0" created-by="admin" created-at="2016-10-14T20:44:59.037+0000" last-modified-by="admin" last-modified-at="2016-10-14T20:44:59.037+0000">
+      <orchestrator />
+      <applicationDependencies />
+    </udm.DeploymentPackage>
+    <udm.Dictionary id="Environments/WINDOWS_DICT" created-by="admin" created-at="2016-10-14T20:57:28.628+0000" last-modified-by="admin" last-modified-at="2016-10-14T20:57:28.628+0000">
+      <entries>
+        <entry key="TARGET_FOLDER">C:\tmp\xld\folder\test</entry>
+      </entries>
+      <encryptedEntries />
+      <restrictToContainers>
+        <ci ref="Infrastructure/localwindows" />
+      </restrictToContainers>
+      <restrictToApplications />
+    </udm.Dictionary>
+    <udm.Dictionary id="Environments/linux_dict" created-by="admin" created-at="2016-10-14T20:56:55.127+0000" last-modified-by="admin" last-modified-at="2016-10-14T20:56:55.127+0000">
+      <entries>
+        <entry key="TARGET_FOLDER">/tmp/xld/folder/test</entry>
+      </entries>
+      <encryptedEntries />
+      <restrictToContainers>
+        <ci ref="Infrastructure/local" />
+      </restrictToContainers>
+      <restrictToApplications />
+    </udm.Dictionary>
+    <overthere.LocalHost id="Infrastructure/local" created-by="admin" created-at="2016-10-14T20:44:38.757+0000" last-modified-by="admin" last-modified-at="2016-10-14T20:44:38.757+0000">
+      <tags />
+      <os>UNIX</os>
+    </overthere.LocalHost>
+    <udm.Environment id="Environments/local" created-by="admin" created-at="2016-10-14T20:44:45.270+0000" last-modified-by="admin" last-modified-at="2016-10-14T20:57:39.382+0000">
+      <members>
+        <ci ref="Infrastructure/localwindows" />
+        <ci ref="Infrastructure/local" />
+      </members>
+      <dictionaries>
+        <ci ref="Environments/linux_dict" />
+        <ci ref="Environments/WINDOWS_DICT" />
+      </dictionaries>
+      <triggers />
+    </udm.Environment>
+    <overthere.CifsHost id="Infrastructure/localwindows" created-by="admin" created-at="2016-10-14T20:52:36.765+0000" last-modified-by="admin" last-modified-at="2016-10-14T21:34:58.229+0000">
+      <tags />
+      <os>WINDOWS</os>
+      <connectionType>WINRM_INTERNAL</connectionType>
+      <address>192.168.122.244</address>
+      <username>test</username>
+      <password>{b64}5LUBx/qD45pCHyLc13o8Sw==</password>
+      <cifsPort>445</cifsPort>
+      <pathShareMappings />
+      <winrmEnableHttps>false</winrmEnableHttps>
+      <winrsAllowDelegate>false</winrsAllowDelegate>
+    </overthere.CifsHost>
+    <xld.Folder id="Applications/testapp/1.0.0/testFolder" created-by="admin" created-at="2016-10-14T20:47:20.302+0000" last-modified-by="admin" last-modified-at="2016-10-14T21:35:03.829+0000" file="Applications/testapp/1.0.0/testFolder/example.zip">
+      <tags />
+      <scanPlaceholders>false</scanPlaceholders>
+      <placeholders />
+      <checksum>70e36ac48f0f8e20ebf419e1969927abef4762ef</checksum>
+      <fileUri>jcr:example.zip</fileUri>
+      <targetPath>{{TARGET_FOLDER}}</targetPath>
+      <targetPathShared>true</targetPathShared>
+    </xld.Folder>
+    <udm.Application id="Applications/testapp" created-by="admin" created-at="2016-10-14T20:44:51.382+0000" last-modified-by="admin" last-modified-at="2016-10-14T20:44:59.117+0000">
+      <lastVersion>1.0.0</lastVersion>
+    </udm.Application>
+  </xl:exported-configuration-items>
+</xl:export>
