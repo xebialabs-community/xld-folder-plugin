@@ -31,5 +31,5 @@ The xld-folder plugin is a XL Deploy plugin that adds capability to upload a fol
 ## Types ##
 
 + `xld.Folder`: A folder uploaded as an archive and copied to the target host as an archive. Extracted on the target host.
-  On linux: `zip`, `gzip`, `bzip2` and `tar` are supported.
-  On windows: `zip` is supported.
+  + On linux: `zip`, `gzip`, `bzip2` and `tar` are supported.
+  + On windows: `zip` is supported.
