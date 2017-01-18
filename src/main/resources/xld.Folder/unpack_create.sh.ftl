@@ -15,9 +15,9 @@ echo "The file type is $FILE_TYPE"
 if [[ $FILE_TYPE == "application/zip" ]]; then
     /usr/bin/unzip -o "${deployed.file.path}" -d "${deployed.targetPath}"
 elif [[ $FILE_TYPE == "application/x-gzip" || $FILE_TYPE == "application/gzip" ]]; then
-    /bin/tar -xvz -C "${deployed.targetPath}" -f "${deployed.file.path}"
+    /bin/tar -xvz -C "${deployed.targetPath}" -f "${deployed.file.path}" <#if deployed.stripComponents gt 0>--strip-components=${deployed.stripComponents}</#if>
 elif [[ $FILE_TYPE == "application/x-bzip2" || $FILE_TYPE == "application/bzip2" ]]; then
-    /bin/tar -xvj -C "${deployed.targetPath}" -f "${deployed.file.path}"
+    /bin/tar -xvj -C "${deployed.targetPath}" -f "${deployed.file.path}" <#if deployed.stripComponents?has_content>--strip-components=${deployed.stripComponents}</#if>
 elif [[ $FILE_TYPE == "application/x-tar" || $FILE_TYPE == "application/tar" ]]; then
-    /bin/tar -xv -C "${deployed.targetPath}" -f "${deployed.file.path}"
+    /bin/tar -xv -C "${deployed.targetPath}" -f "${deployed.file.path}" <#if deployed.stripComponents?has_content>--strip-components=${deployed.stripComponents}</#if>
 fi

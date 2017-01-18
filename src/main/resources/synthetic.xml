@@ -13,6 +13,7 @@
         <generate-deployable type="xld.Folder" extends="udm.BaseDeployableArchiveArtifact" />
         <property name="targetPath" description="Path to which artifact must be copied to when being deployed."/>
         <property name="targetPathShared" kind="boolean" required="false" description="Is the targetPath shared by others on the host. When true, the targetPath is not deleted during undeployment; only the artifacts copied to it." />
+        <property name="stripComponents" kind="integer" required="false" category="tar" default="0" description="Strip given number of leading components from file names before extraction." />
     </type>
 
 </synthetic>
