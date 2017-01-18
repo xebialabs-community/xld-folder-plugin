@@ -17,11 +17,11 @@ echo "The file type is: $FILE_TYPE"
 if [[ $FILE_TYPE == "application/zip" ]]; then
     EXTRACT_COMMAND=`/usr/bin/unzip -lqq "${previousDeployed.file.path}" | awk '{print $4}'`
 elif [[ $FILE_TYPE == "application/x-gzip" || $FILE_TYPE == "application/gzip" ]]; then
-    EXTRACT_COMMAND=`/bin/tar -tvzf "${previousDeployed.file.path}" <#if previousDeployed.stripComponents gt 0>--strip-components=${previousDeployed.stripComponents}</#if> | awk '{print $6}'`
+    EXTRACT_COMMAND=`/bin/tar -tvzf "${previousDeployed.file.path}" <#if previousDeployed.stripComponents gt 0>--strip-components=${previousDeployed.stripComponents}</#if> ${previousDeployed.members?join(" ")} | awk '{print $6}'`
 elif [[ $FILE_TYPE == "application/x-bzip2" || $FILE_TYPE == "application/bzip2" ]]; then
-    EXTRACT_COMMAND=`/bin/tar -tvjf "${previousDeployed.file.path}" <#if previousDeployed.stripComponents gt 0>--strip-components=${previousDeployed.stripComponents}</#if> | awk '{print $6}'`
+    EXTRACT_COMMAND=`/bin/tar -tvjf "${previousDeployed.file.path}" <#if previousDeployed.stripComponents gt 0>--strip-components=${previousDeployed.stripComponents}</#if> ${previousDeployed.members?join(" ")} | awk '{print $6}'`
 elif [[ $FILE_TYPE == "application/x-tar" || $FILE_TYPE == "application/tar" ]]; then
-    EXTRACT_COMMAND=`/bin/tar -tvf "${previousDeployed.file.path}" <#if previousDeployed.stripComponents gt 0>--strip-components=${previousDeployed.stripComponents}</#if> | awk '{print $6}'`
+    EXTRACT_COMMAND=`/bin/tar -tvf "${previousDeployed.file.path}" <#if previousDeployed.stripComponents gt 0>--strip-components=${previousDeployed.stripComponents}</#if> ${previousDeployed.members?join(" ")} | awk '{print $6}'`
 fi
 
 <#if (previousDeployed.targetPathShared)>
