@@ -9,6 +9,9 @@ See the **XL Deploy Reference Manual** for background information on XL Deploy a
 [![Build Status][xld-folder-plugin-travis-image]][xld-folder-plugin-travis-url]
 [![Codacy Badge][xld-folder-plugin-codacy-image] ][xld-folder-plugin-codacy-url]
 [![Code Climate][xld-folder-plugin-code-climate-image] ][xld-folder-plugin-code-climate-url]
+[![License: MIT][xld-folder-plugin-license-image] ][xld-folder-plugin-license-url]
+[![Github All Releases][xld-folder-plugin-downloads-image] ]()
+
 
 [xld-folder-plugin-travis-image]: https://travis-ci.org/xebialabs-community/xld-folder-plugin.svg?branch=master
 [xld-folder-plugin-travis-url]: https://travis-ci.org/xebialabs-community/xld-folder-plugin
@@ -16,6 +19,10 @@ See the **XL Deploy Reference Manual** for background information on XL Deploy a
 [xld-folder-plugin-codacy-url]: https://www.codacy.com/app/joris-dewinne/xld-folder-plugin
 [xld-folder-plugin-code-climate-image]: https://codeclimate.com/github/xebialabs-community/xld-folder-plugin/badges/gpa.svg
 [xld-folder-plugin-code-climate-url]: https://codeclimate.com/github/xebialabs-community/xld-folder-plugin
+[xld-folder-plugin-license-image]: https://img.shields.io/badge/License-MIT-yellow.svg
+[xld-folder-plugin-license-url]: https://opensource.org/licenses/MIT
+[xld-folder-plugin-downloads-image]: https://img.shields.io/github/downloads/xebialabs-community/xld-folder-plugin/total.svg
+
 
 
 
