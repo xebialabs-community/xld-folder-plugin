@@ -13,7 +13,7 @@
 #!/bin/bash
 set -e
 
-FILE_TYPE=`file --mime-type -b ${deployed.file.path}`
+FILE_TYPE=`file -i ${deployed.file.path} | sed -n 's/.*: \(.*\);.*/\1/p'`
 
 echo "The file type is $FILE_TYPE"
 

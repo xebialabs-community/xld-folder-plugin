@@ -15,7 +15,7 @@ set -e
 
 echo "Target path is shared? ${previousDeployed.targetPathShared?c}"
 
-FILE_TYPE=`file --mime-type -b ${previousDeployed.file.path}`
+FILE_TYPE=`file -i ${previousDeployed.file.path} | sed -n 's/.*: \(.*\);.*/\1/p'`
 
 echo "The file type is: $FILE_TYPE"
 
