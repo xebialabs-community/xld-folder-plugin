@@ -16,9 +16,9 @@ version = '1.0.0'
 
 xlDocker {
   compileImage = 'xebialabs/xld_dev_compile'
-  compileVersion = 'v7.0.0.1'
+  compileVersion = 'v7.1.0.2'
   runImage = 'xebialabs/xld_dev_run'
-  runVersion = 'v7.0.0.1'
+  runVersion = 'v7.1.0.2'
   runPortMapping = '14516:4516'
 }
 
