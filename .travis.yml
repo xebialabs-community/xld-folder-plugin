@@ -7,7 +7,8 @@ deploy:
   provider: releases
   api_key:
     secure: IDZq6GzHHK33EssfQ9P8WH/U59foaidaVD9X7vmSeG/JpdpzKSzhRmWG1j7nzoUXxvCKCBsa+TYp9TIr2MIfKnb14u3pLu+G6Ic0DKZEETxopSRUqw/eZCjWmwNaN7FT0EMUQP1ge00R7oHF4/dqkKJCZ7lH7tuqlZhCuzejWrqUst0IIiEyKDnM9oenbrmnYfmqw9Gk21hegqAi5LpGjVwgzpYpE2vPTztookf8K62wdrTp7WvD/heu0/svxrqQKR91aiYOEzIqlYWmfAACBvkc8ITZ5RRnUocx9wfHDMUJakRV6sJSiv4CNdzQVjCXVEdnk6Z4i6r3gg9/Wk6BjKXQVykb0up3sCS/YysZKKxDXCgZK8mosWau3b/4LplIfbeVbkR8sztVZ+NZ7AaLKp09j9793/YIZ8ojYDExwdX/Q1O54TSk+JUN3vIs+4guujkCXOIO4iAVewZySFv4babjzLbirfemHszTMb0YtXm3F07s+7BGfg6OGwo37F8CK51ufskQHU0V4aB4425aqbLd5VyI/DbUXgWTApEk939kuXocPUuNjKKQLX1kyMEjX6aDSjJPiWUG4Re6M9RRj+Z5TXPJy07eMjAw1lybC78qm8VQ6CDWwuhMAHVWCyZrUYk6GU7hqsbsdHaT2YlTYOf0te61grPCoAh3E1FqPkw=
-  file: build/distributions/xld-folder-plugin-1.0.0.xldp
+  file_glob: true
+  file: build/distributions/*
   skip_cleanup: true
   on:
     all_branches: true
