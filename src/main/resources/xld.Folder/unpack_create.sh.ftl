@@ -13,7 +13,8 @@
 #!/bin/bash
 set -e
 
-FILE_TYPE=`file --mime-type -b ${deployed.file.path}`
+# "file -i -b" output example is "text/plain; charset=us-ascii", so piping into sed to extract only the mime type portion of the output (text/plain)
+FILE_TYPE=`file -i -b ${deployed.file.path} | sed -n 's/\(.*\);.*/\1/p'`
 
 echo "The file type is $FILE_TYPE"
 
