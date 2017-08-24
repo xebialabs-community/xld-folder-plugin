@@ -15,15 +15,20 @@ apply plugin: 'maven'
 
 xlDocker {
   compileImage = 'xebialabs/xld_dev_compile'
-  compileVersion = 'v7.1.0.2'
+  compileVersion = 'v7.1.0.3'
   runImage = 'xebialabs/xld_dev_run'
-  runVersion = 'v7.1.0.2'
+  runVersion = 'v7.1.0.1'
   runPortMapping = '14516:4516'
 }
 
 if (!project.hasProperty('release.scope')) {
   project.ext['release.scope'] = 'patch'
 }
+
+if (!project.hasProperty('release.useLastTag')) {
+  project.ext['release.useLastTag'] = true
+}
+
 
 processResources.configure {
   filter ReplaceTokens, tokens: [
