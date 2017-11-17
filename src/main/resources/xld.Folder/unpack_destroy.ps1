@@ -12,5 +12,5 @@ if ($previousDeployed.targetPathShared) {
 }
 else {
     Write-Host "Delete entire targetPath as it is not shared"
-    Remove-Item $previousDeployed.targetPath
+    Remove-Item $previousDeployed.targetPath -Recurse -Force
 }
