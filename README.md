@@ -1,11 +1,5 @@
 # Preface #
 
-This document describes the functionality provided by the xld-folder-plugin.
-
-See the **XL Deploy Reference Manual** for background information on XL Deploy and deployment concepts.
-
-# CI status #
-
 [![Build Status][xld-folder-plugin-travis-image]][xld-folder-plugin-travis-url]
 [![Codacy Badge][xld-folder-plugin-codacy-image] ][xld-folder-plugin-codacy-url]
 [![Code Climate][xld-folder-plugin-code-climate-image] ][xld-folder-plugin-code-climate-url]
@@ -23,8 +17,9 @@ See the **XL Deploy Reference Manual** for background information on XL Deploy a
 [xld-folder-plugin-license-url]: https://opensource.org/licenses/MIT
 [xld-folder-plugin-downloads-image]: https://img.shields.io/github/downloads/xebialabs-community/xld-folder-plugin/total.svg
 
+This document describes the functionality provided by the xld-folder-plugin.
 
-
+See the **XL Deploy Reference Manual** for background information on XL Deploy and deployment concepts.
 
 # Overview #
 
