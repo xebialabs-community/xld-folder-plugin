@@ -17,22 +17,14 @@ set -e
 FILE_TYPE=`file -i -b ${deployed.file.path} | sed -n 's/\(.*\);.*/\1/p'`
 
 echo "The file type is $FILE_TYPE"
+mkdir -p ${deployed.targetPath}
 
 if [[ $FILE_TYPE == "application/zip" ]]; then
     /usr/bin/unzip -o "${deployed.file.path}" -d "${deployed.targetPath}"
 elif [[ $FILE_TYPE == "application/x-gzip" || $FILE_TYPE == "application/gzip" ]]; then
-    if [ ! -d "${deployed.targetPath}" ]; then
-        mkdir ${deployed.targetPath}
-    fi
     /bin/tar -xvz -C "${deployed.targetPath}" -f "${deployed.file.path}" <#if deployed.stripComponents gt 0>--strip-components=${deployed.stripComponents}</#if> ${deployed.members?join(" ")}
 elif [[ $FILE_TYPE == "application/x-bzip2" || $FILE_TYPE == "application/bzip2" ]]; then
-    if [ ! -d "${deployed.targetPath}" ]; then
-        mkdir ${deployed.targetPath}
-    fi
     /bin/tar -xvj -C "${deployed.targetPath}" -f "${deployed.file.path}" <#if deployed.stripComponents gt 0>--strip-components=${deployed.stripComponents}</#if> ${deployed.members?join(" ")}
 elif [[ $FILE_TYPE == "application/x-tar" || $FILE_TYPE == "application/tar" ]]; then
-    if [ ! -d "${deployed.targetPath}" ]; then
-        mkdir ${deployed.targetPath}
-    fi
     /bin/tar -xv -C "${deployed.targetPath}" -f "${deployed.file.path}" <#if deployed.stripComponents gt 0>--strip-components=${deployed.stripComponents}</#if> ${deployed.members?join(" ")}
 fi
