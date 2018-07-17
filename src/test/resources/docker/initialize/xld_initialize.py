@@ -43,5 +43,6 @@ def add_folder(zos, folder_name, base_folder_name):
     input_stream.close()
     zos.closeEntry()
 
-result = zipdir("/data/build/resources/test/docker/initialize/cis", "/tmp/cis.zip")
-repository.importCisAndWait("/tmp/cis.zip")
+result = zipdir("/data/cis", "/data/cis.zip")
+print result
+repository.importCisAndWait("/data/src/test/resources/docker/initialize/cis.zip")

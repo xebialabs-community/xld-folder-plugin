@@ -74,7 +74,7 @@
       <scanPlaceholders>false</scanPlaceholders>
       <placeholders />
       <checksum>70e36ac48f0f8e20ebf419e1969927abef4762ef</checksum>
-      <fileUri>jcr:example.zip</fileUri>
+      <fileUri>internal:example.zip</fileUri>
       <targetPath>{{TARGET_FOLDER}}</targetPath>
       <targetPathShared>true</targetPathShared>
     </xld.Folder>
