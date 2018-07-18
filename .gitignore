@@ -5,4 +5,5 @@
 .settings/
 bin/
 build
+src/test/resources/docker/initialize/cis.zip
 supervisord.*
